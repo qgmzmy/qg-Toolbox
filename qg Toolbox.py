@@ -2,6 +2,7 @@ import os
 os.system("title qg Toolbox by-qgmzmy")
 while True:
     os.system("echo off")
+    os.system("cls")
     os.system("cd /d res/adb")
     print('''============================
          qg Toolbox
@@ -16,6 +17,7 @@ while True:
     os.system("cls")
     if ipt == "1":
         os.system("echo on")
+        print("输入'exit'返回主页")
         os.system("cmd /k")
     elif ipt == "2":
         print('请将payload.bin放在payload-dumper-go目录下')
@@ -39,6 +41,7 @@ while True:
             os.system("pause")
             os.system("cls")
     elif ipt == "3":
+        print("输入'exit'返回主页")
         os.system("adb shell")
         os.system("cls")
     elif ipt == "4":
@@ -52,7 +55,8 @@ while True:
 8.重启到fastbootd（fastboot）
 9.重启到sideload（若设备支持）
 10。重启到sideload（fastboot）（若设备支持）
-11.关机''')
+11.关机
+12.返回主页''')
         ipt = input("请输入序号：")
         if ipt == "1":
             os.system("adb reboot")
@@ -87,10 +91,12 @@ while True:
         elif ipt == "11":
             os.system("adb shell reboot -p")
             os.system("cls")
+        elif ipt == "12":
+            os.system("cls")
         else:
             print('请正确输入...')
             os.system("pause")
             os.system("cls")
     elif ipt == "5":
         break
-        os.system("taskkill /f /im qg cmd.exe")
+        os.system("taskkill /f /im cmd.exe")
