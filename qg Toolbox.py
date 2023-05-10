@@ -48,15 +48,14 @@ while True:
         print('''1.重启到system
 2.重启到system（fastboot）
 3.重启到recovery
-4.重启到recovery（fastboot）
-5.重启到bootloader
-6.重启到bootloader（fastboot）
-7.重启到fastbootd
-8.重启到fastbootd（fastboot）
-9.重启到sideload（若设备支持）
-10。重启到sideload（fastboot）（若设备支持）
-11.关机
-12.返回主页''')
+4.重启到bootloader
+5.重启到bootloader（fastboot）
+6.重启到fastbootd
+7.重启到fastbootd（fastboot）
+8.重启到sideload（若设备支持）
+9。重启到sideload（fastboot）（若设备支持）
+10.关机
+11.返回主页''')
         ipt = input("请输入序号：")
         if ipt == "1":
             os.system("adb reboot")
@@ -68,30 +67,27 @@ while True:
             os.system("adb reboot recovery")
             os.system("cls")
         elif ipt == "4":
-            os.system("fastboot reboot recovery")
-            os.system("cls")
-        elif ipt == "5":
             os.system("adb reboot bootloader")
             os.system("cls") 
-        elif ipt == "6":
+        elif ipt == "5":
             os.system("fastboot reboot bootloader")
             os.system("cls")
-        elif ipt == "7":
+        elif ipt == "6":
             os.system("adb reboot fastboot")
             os.system("cls")
-        elif ipt == "8":
+        elif ipt == "7":
             os.system("fastboot reboot fastboot")
             os.system("cls")
-        elif ipt == "9":
+        elif ipt == "8":
             os.system("adb reboot sideload")
             os.system("cls")
-        elif ipt == "10":
+        elif ipt == "9":
             os.system("fastboot reboot sideload")
             os.system("cls")
-        elif ipt == "11":
+        elif ipt == "10":
             os.system("adb shell reboot -p")
             os.system("cls")
-        elif ipt == "12":
+        elif ipt == "11":
             os.system("cls")
         else:
             print('请正确输入...')
