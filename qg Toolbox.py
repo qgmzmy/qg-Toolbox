@@ -12,7 +12,8 @@ while True:
  2.从payload.bin提取img映像
  3.打开adb shell
  4.重启选项
- 5.退出''')
+ 5.应用管理
+ 6.退出''')
     ipt = input("请输入序号：")
     os.system("cls")
     if ipt == "1":
@@ -94,5 +95,38 @@ while True:
             os.system("pause")
             os.system("cls")
     elif ipt == "5":
+        print('''1.安装应用
+2.列出所有包名
+3.卸载应用
+4.返回主页''')
+        ipt = input("请输入序号：")
+        os.system("cls")
+        if ipt == "1":
+            apk = input("请拖入apk文件：")
+            os.system("adb install "+apk)
+            os.system("pause")
+        elif ipt == "2":
+            os.system("adb shell pm list package")
+            os.system("pause")
+        elif ipt == "3":
+            package = input("请输入要卸载的应用的包名（系统应用可能无效）（查看包名请输入'package'）：")
+            if package == "package":
+                os.system("adb shell pm list package")
+                package = input("请输入要卸载的应用的包名（系统应用可能无效）：")
+                os.system("cls")
+                os.system("adb uninstall "+package)
+                os.system("pause")
+            else:
+                os.system("adb uninstall "+package)
+                os.system("pause")
+        elif ipt == "4":
+            continue
+        else:
+            print('请正确输入...')
+            os.system("pause")
+    elif ipt == "6" or ipt == "exit":
         break
         os.system("taskkill /f /im cmd.exe")
+    else:
+        print('请正确输入...')
+        os.system("pause")
