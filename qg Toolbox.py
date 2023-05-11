@@ -15,7 +15,8 @@ while True:
  3.打开adb shell
  4.重启选项
  5.应用管理
- 6.退出''')
+ 6.刷入img镜像
+ 7.退出''')
     ipt = input("请输入序号：")
     os.system("cls")
     if ipt == "1":
@@ -136,7 +137,123 @@ while True:
         else:
             print('请正确输入...')
             os.system("pause")
-    elif ipt == "6" or ipt == "exit":
+    elif ipt == "6":
+        print('''1.刷入boot
+2.刷入init_boot
+3.刷入system
+4.刷入recovery
+5.自定义刷入
+6.返回主页''')
+        ipt = input("请输入序号：")
+        os.system("cls")
+        if ipt == "1":
+            print('''1.刷入boot
+2.刷入boot_a
+3.刷入boot_b
+4.返回主页''')
+            ipt = input("请输入序号：")
+            if ipt == "1":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash boot "+img)
+                os.system("pause")
+            elif ipt == "2":
+                img = input("请拖入img映像")
+                os.system("fastboot flash boot_a "+img)
+                os.system("pause")
+            elif ipt == "3":
+                img = input("请拖入img映像")
+                os.system("fastboot flash boot_b "+img)
+                os.system("pause")
+            elif ipt == "4":
+                continue
+            else:
+                print('请正确输入...')
+                os.system("pause")
+        elif ipt == "2":
+            print('''1.刷入init_boot
+2.刷入init_boot_a
+3.刷入init_boot_b
+4.返回主页''')
+            ipt = input("请输入序号：")
+            if ipt == "1":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash init_boot "+img)
+                os.system("pause")
+            elif ipt == "2":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash init_boot_a "+img)
+                os.system("pause")
+            elif ipt == "3":
+                img = input("请拖入img映像：")
+                os.system("fastboor flash init_boot_b "+img)
+                os.system("pause")
+            elif ipt == "4":
+                continue
+            else:
+                print('请正确输入...')
+                os.system("pause")
+        elif ipt == "3":
+            print('''1.刷入system
+2.刷入system_a
+3.刷入system_b
+4.返回主页''')
+            ipt = input("请输入序号：")
+            if ipt == "1":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash system "+img)
+                os.system("pause")
+            elif ipt == "2":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash system_a "+img)
+                os.system("pause")
+            elif ipt == "3":
+                img = input("请拖入img映像：")
+                os.system("fastboor flash system_b "+img)
+                os.system("pause")
+            elif ipt == "4":
+                continue
+            else:
+                print('请正确输入...')
+                os.system("pause")
+        elif ipt == "2":
+            print('''1.刷入recovery
+2.刷入recovery_a
+3.刷入recovery_b
+4.临时启动
+5.返回主页''')
+            ipt = input("请输入序号：")
+            if ipt == "1":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash recovery "+img)
+                os.system("pause")
+            elif ipt == "2":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash recovery_a "+img)
+                os.system("pause")
+            elif ipt == "3":
+                img = input("请拖入img映像：")
+                os.system("fastboot flash recovery_b "+img)
+                os.system("pause")
+            elif ipt == "4":
+                img = input("请拖入img映像：")
+                os.system("fastboot boot "+img)
+                os.system("pause")
+            elif ipt == "5":
+                continue
+            else:
+                print('请正确输入...')
+                os.system("pause")
+        elif ipt == "5":
+            ipt = input("请输入分区名称：")
+            img = input("请拖入img映像:")
+            os.system("fastboot flash "+ipt+" "+img)
+            os.system("pause")
+        elif ipt == "6":
+            continue
+        else:
+            print('请正确输入...')
+            os.system("pause")
+    elif ipt == "7" or ipt == "exit":
         break
         os.system("taskkill /f /im cmd.exe")
     else:
