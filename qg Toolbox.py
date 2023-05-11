@@ -4,10 +4,12 @@ while True:
     os.system("echo off")
     os.system("cls")
     os.system("cd /d res/adb")
-    print('''============================
-         qg Toolbox
-        作者：qgmzmy
-============================''')
+    print('''   ____   _____   _______          _ _               
+  / __ \ / ____| |__   __|        | | |              
+ | |  | | |  __     | | ___   ___ | | |__   _____  __		
+ | |  | | | |_ |    | |/ _ \ / _ \| | '_ \ / _ \ \/ /
+ | |__| | |__| |    | | (_) | (_) | | |_) | (_) >  < 
+  \___\_\\\_____|    |_|\___/ \___/|_|_.__/ \___/_/\_\  作者：qgmzmy''')
     print(''' 1.打开cmd命令行
  2.从payload.bin提取img映像
  3.打开adb shell
@@ -21,20 +23,30 @@ while True:
         print("输入'exit'返回主页")
         os.system("cmd /k")
     elif ipt == "2":
-        print('请将payload.bin放在payload-dumper-go目录下')
-        os.system("pause")
         print('''1.提取所有
 2.提取boot
 3.提取init_boot
 4.返回主页''')
         ipt = input("请输入序号：")
-        os.system("cls")
+        payload = input("请拖入payload.bin：")
         if ipt == "1":
-            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -o .\img .\payload.bin")
+            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -o .\img "+payload)
+            print('提取完成，请在payload-dumper-go/img中查看')
+            os.system("pause")
+            os.system("start payload-dumper-go\img")
+            os.system("cls")
         elif ipt == "2":
-            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -p boot -o .\img .\payload.bin")
+            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -p boot -o .\img "+payload)
+            print('提取完成，请在payload-dumper-go/img中查看')
+            os.system("pause")
+            os.system("start payload-dumper-go\img")
+            os.system("cls")
         elif ipt == "3":
-            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -p init_boot -o .\img .\payload.bin")
+            os.system("cd /d payload-dumper-go&payload-dumper-go.exe -p init_boot -o .\img "+payload)
+            print('提取完成，请在payload-dumper-go/img中查看')
+            os.system("pause")
+            os.system("start payload-dumper-go/img")
+            os.system("cls")
         elif ipt == "4":
             continue
         else:
