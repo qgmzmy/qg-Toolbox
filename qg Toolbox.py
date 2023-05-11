@@ -16,7 +16,8 @@ while True:
  4.重启选项
  5.应用管理
  6.刷入img镜像
- 7.退出''')
+ 7.安装Google USB驱动
+ 8.退出''')
     ipt = input("请输入序号：")
     os.system("cls")
     if ipt == "1":
@@ -253,7 +254,9 @@ while True:
         else:
             print('请正确输入...')
             os.system("pause")
-    elif ipt == "7" or ipt == "exit":
+    elif ipt == "7":
+        os.system("start res\install_usb_driver.bat")
+    elif ipt == "8" or ipt == "exit":
         break
         os.system("taskkill /f /im cmd.exe")
     else:
