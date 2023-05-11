@@ -15,7 +15,7 @@ while True:
  3.打开adb shell
  4.重启选项
  5.应用管理
- 6.刷入img镜像
+ 6.刷入img映像
  7.安装Google USB驱动
  8.退出''')
     ipt = input("请输入序号：")
