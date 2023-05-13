@@ -9,7 +9,7 @@ while True:
         while True:
             os.system("echo off")
             os.system("cls")
-            os.system("cd /d res/adb")
+            os.system("cd /d adb")
             print('''  ____   _____   _______          _ _               
  / __ \ / ____| |__   __|        | | |              
 | |  | | |  __     | | ___   ___ | | |__   _____  __		
@@ -38,7 +38,7 @@ while True:
 3.提取init_boot
 4.返回主页''')
                 ipt = input("请输入序号：")
-                if ipt != "4":
+                if ipt == "1" or ipt == "2" or ipt == "3":
                     payload = input("请拖入payload.bin：")
                 if ipt == "1":
                     os.system("cd /d payload-dumper-go&payload-dumper-go.exe -o .\img "+payload)
@@ -271,23 +271,23 @@ while True:
             elif ipt == "7":
                 os.system("start res\install_usb_driver.bat")
             elif ipt == "8":
-                print('型号：        ',end="")
+                os.system('echo|set /p="型号：        "')
                 os.system("adb -d shell getprop ro.product.model")
-                print('厂商：        ',end="")
+                os.system('echo|set /p="厂商：        "')
                 os.system("adb -d shell getprop ro.product.brand")
-                print('Android 版本：',end="")
+                os.system('echo|set /p="Android 版本："')
                 os.system("adb shell getprop ro.build.version.release")
-                print('API 版本：    ',end="")
+                os.system('echo|set /p="API 版本：    "')
                 os.system("adb shell getprop ro.build.version.sdk")
-                print('代号：        ',end="")
+                os.system('echo|set /p="代号：        "')
                 os.system("adb shell getprop ro.product.name")
-                print('架构：        ',end="")
+                os.system('echo|set /p="架构：        "')
                 os.system("adb shell getprop ro.product.cpu.abi")
-                print('系统版本：    ',end="")
+                os.system('echo|set /p="系统版本：    "')
                 os.system("adb shell getprop ro.system.build.id")
-                print('Android ID：  ',end="")
+                os.system('echo|set /p="Android ID：  "')
                 os.system("adb shell settings get secure android_id")
-                print('A/B Update：  ',end="")
+                os.system('echo|set /p="A/B Update：  "')
                 os.system("adb shell getprop ro.build.ab_update")
                 os.system("adb devices")
                 os.system("pause")
