@@ -271,6 +271,7 @@ while True:
             elif ipt == "7":
                 os.system("start res\install_usb_driver.bat")
             elif ipt == "8":
+                os.system("adb devices")
                 os.system('echo|set /p="型号：           "')
                 os.system("adb -d shell getprop ro.product.model")
                 os.system('echo|set /p="厂商：           "')
@@ -297,7 +298,6 @@ while True:
                 os.system("adb shell getprop ro.build.ab_update")
                 os.system('echo|set /p="SoC：            "')
                 os.system("adb shell getprop ro.soc.model")
-                os.system("adb devices")
                 os.system("pause")
             elif ipt == "9":
                 print('''1.传输
