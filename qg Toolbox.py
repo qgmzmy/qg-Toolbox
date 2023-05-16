@@ -1,7 +1,7 @@
 import os
 os.system("title qg Toolbox by-qgmzmy")
 while True:
-    print('若不正确使用此软件可以导致数据丢失、无法开机等情况，若已知晓请输入“know”进行确认。开发者不会对使用此软件产生的任何后果负责。')
+    print('若不正确使用此软件可能导致数据丢失、无法开机等情况，若已知晓请输入“know”进行确认。开发者不会对使用此软件产生的任何后果负责。')
     ipt = input('''
 按回车确定：''')
     os.system("cls")
